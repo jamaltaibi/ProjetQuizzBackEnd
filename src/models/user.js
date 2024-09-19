@@ -10,13 +10,17 @@ class User {
         const queryData = [...userData,userId];
         connection.query("UPDATE User SET name_user = ?, email_user=?, mdp_user=? WHERE id = ?", queryData, callback );
     }
-    // Read
-    static getUser(callback){
-        connection.query("SELECT * FROM User", callback);
+    // Read conditions id
+    static getUser(userId,callback){
+        connection.query("SELECT * FROM User WHERE id=?",userId, callback);
     }
     // Delete
     static deleteUser(userId,callback){
         connection.query("DELETE FROM User WHERE id=?", userId, callback);
+    }
+    //Read conditions email
+    static getUserByEmail(email, callback){
+        connection.query("SELECT * FROM User WHERE email_user = ?", email, callback);
     }
 }
 
