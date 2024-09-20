@@ -5,10 +5,6 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const userRouter = require("./src/routes/userRouter");
 const bodyParser = require('body-parser');
-// const corsOptions = {
-//   origin: 'http://localhost:5173/',
-//   opttionsSucessStatus: 200
-// }
 
 
 app.use(bodyParser.json());
